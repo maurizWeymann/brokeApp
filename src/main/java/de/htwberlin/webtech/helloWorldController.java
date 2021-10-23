@@ -11,7 +11,8 @@ import java.util.Map;
 @Controller
 public class helloWorldController {
     // Daniels Version
-    @GetMapping(path = "/HelloWorldPage")
+    //@GetMapping(path = "/HelloWorldPage")
+    @GetMapping(path = "/")
     public ModelAndView showHelloWorld(){
     Map<String, Object> model = new HashMap<>();
     model.put("helloName", "Das ist mein Wert aus dem Model und Controller");
