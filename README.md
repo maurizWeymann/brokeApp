@@ -1,8 +1,8 @@
 # Milestone 1
 
-## Project name: 'Broke'
+## 'Broke'
 
-### A small app that can calculate the time period it will take you to get you rich
+### A small app that can calculate the time period it will take to get you rich
 
 ## HowTo
 
