@@ -6,14 +6,14 @@ public class CalculationManipulationRequest {
 
     private BigDecimal initialInvestment;
     private Integer yearsToAccumulate;
-    private BigDecimal monthlyContribution;
+    private BigDecimal additionalContribution;
     private String compoundFrequency;//hier evt. Array mit Auswahl für Monat, Jahr etc.
     private int interestRate;
 
     public CalculationManipulationRequest(BigDecimal initialInvestment, Integer yearsToAccumulate, BigDecimal monthlyContribution, String compoundFrequency, int interestRate) {
         this.initialInvestment = initialInvestment;
         this.yearsToAccumulate = yearsToAccumulate;
-        this.monthlyContribution = monthlyContribution;
+        this.additionalContribution = monthlyContribution;
         this.compoundFrequency = compoundFrequency;
         this.interestRate = interestRate;
     }
@@ -34,12 +34,12 @@ public class CalculationManipulationRequest {
         this.yearsToAccumulate = yearsToAccumulate;
     }
 
-    public BigDecimal getMonthlyContribution() {
-        return monthlyContribution;
+    public BigDecimal getAdditionalContribution() {
+        return additionalContribution;
     }
 
-    public void setMonthlyContribution(BigDecimal monthlyContribution) {
-        this.monthlyContribution = monthlyContribution;
+    public void setAdditionalContribution(BigDecimal additionalContribution) {
+        this.additionalContribution = additionalContribution;
     }
 
     public String getCompoundFrequency() {
