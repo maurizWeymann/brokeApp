@@ -10,7 +10,8 @@ public class Calculation {
     private String compoundFrequency;//hier evt. Array mit Auswahl für Monat, Jahr etc.
     private int interestRate;
 
-    public Calculation(BigDecimal initialInvestment, Integer yearsToAccumulate, BigDecimal monthlyContribution, String compoundFrequency, int interestRate) {
+    public Calculation(long id, BigDecimal initialInvestment, Integer yearsToAccumulate, BigDecimal monthlyContribution, String compoundFrequency, int interestRate) {
+        this.id=id;
         this.initialInvestment = initialInvestment;
         this.yearsToAccumulate = yearsToAccumulate;
         this.monthlyContribution = monthlyContribution;
