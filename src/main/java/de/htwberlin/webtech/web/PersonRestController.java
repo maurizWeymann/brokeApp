@@ -19,7 +19,6 @@ public class PersonRestController {
         this.personService = personRepository;
     }
 
-
     @GetMapping(path = "/api/v1/persons")
     public ResponseEntity<List<Person>> fetchPersons(){
         return ResponseEntity.ok(personService.findAll());
