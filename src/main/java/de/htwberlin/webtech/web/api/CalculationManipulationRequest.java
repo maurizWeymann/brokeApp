@@ -18,6 +18,8 @@ public class CalculationManipulationRequest {
         this.interestRate = interestRate;
     }
 
+    public CalculationManipulationRequest() {}
+
     public BigDecimal getInitialInvestment() {
         return initialInvestment;
     }
