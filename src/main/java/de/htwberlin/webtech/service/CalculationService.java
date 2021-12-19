@@ -53,6 +53,7 @@ public class CalculationService {
         calculationEntity.setCompoundFrequency(request.getCompoundFrequency());
         calculationEntity.setInterestRate(request.getInterestRate());
         calculationEntity.setCompoundFrequency(request.getCompoundFrequency());
+        calculationEntity = calculationRepository.save(calculationEntity);
 
         return transformEntity(calculationEntity);
     }
