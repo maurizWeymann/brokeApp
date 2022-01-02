@@ -1,13 +1,27 @@
 package de.htwberlin.webtech.web.api;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.math.BigDecimal;
 
 public class CalculationManipulationRequest {
 
+    @NotNull(message = "Please insert an amount to start with")
     private BigDecimal initialInvestment;
+
+    @NotNull(message = "Please enter a timespan to calculate")
     private Integer yearsToAccumulate;
+
+    @NotNull(message = "Please enter an amount or 0 for additional contributions")
     private BigDecimal additionalContribution;
+
+    @Pattern(
+            regexp = "daily|monthly|yearly",
+            message = "Please choose one of the options"
+            )
     private String compoundFrequency;//hier evt. Array mit Auswahl für Monat, Jahr etc.
+
+    @NotNull(message = "Please enter an percentage to calculate")
     private int interestRate;
 
     public CalculationManipulationRequest(BigDecimal initialInvestment, Integer yearsToAccumulate, BigDecimal monthlyContribution, String compoundFrequency, int interestRate) {

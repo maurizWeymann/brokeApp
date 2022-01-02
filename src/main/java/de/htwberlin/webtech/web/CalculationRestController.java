@@ -6,6 +6,7 @@ import de.htwberlin.webtech.web.api.CalculationManipulationRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -25,19 +26,19 @@ public class CalculationRestController {
     }
 
     @GetMapping(path = "/api/v1/calculations/{id}")
-    public ResponseEntity<Calculation> fetchCalculationById(@PathVariable Long id){
+    public ResponseEntity<Calculation> fetchCalculationById( @PathVariable Long id){
         var calculation = calculationService.findById(id);
         return calculation != null? ResponseEntity.ok(calculation) : ResponseEntity.notFound().build();
     }
 
     @PostMapping(path = "/api/v1/calculations")
-    public ResponseEntity<Void> createCalculation(@RequestBody CalculationManipulationRequest request) throws URISyntaxException{
+    public ResponseEntity<Void> createCalculation(@Valid @RequestBody CalculationManipulationRequest request) throws URISyntaxException{
         var calculation = calculationService.create(request);
         URI uri = new URI("/api/v1/calculations" + calculation.getId());
         return ResponseEntity.created(uri).build();
     }
     @PutMapping(path = "/api/v1/calculations/{id}")
-    public ResponseEntity<Calculation> updateCalculation(@PathVariable Long id, @RequestBody CalculationManipulationRequest request){
+    public ResponseEntity<Calculation> updateCalculation(@Valid @PathVariable Long id, @RequestBody CalculationManipulationRequest request){
         var calculation = calculationService.update(id, request);
         return calculation != null? ResponseEntity.ok(calculation) : ResponseEntity.notFound().build();
     }
