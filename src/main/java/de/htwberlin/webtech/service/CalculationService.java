@@ -49,10 +49,11 @@ public class CalculationService {
         }
         var calculationEntity = calculationEntityOptional.get();
         calculationEntity.setInitialInvestment(request.getInitialInvestment());
+        calculationEntity.setYearsToAccumulate(request.getYearsToAccumulate());
         calculationEntity.setAdditionalContribution(request.getAdditionalContribution());
         calculationEntity.setCompoundFrequency(request.getCompoundFrequency());
         calculationEntity.setInterestRate(request.getInterestRate());
-        calculationEntity.setCompoundFrequency(request.getCompoundFrequency());
+//        calculationEntity.setCompoundFrequency(request.getCompoundFrequency());
         calculationEntity = calculationRepository.save(calculationEntity);
 
         return transformEntity(calculationEntity);
