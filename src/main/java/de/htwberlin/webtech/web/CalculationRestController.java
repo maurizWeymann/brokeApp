@@ -38,7 +38,7 @@ public class CalculationRestController {
         return ResponseEntity.created(uri).build();
     }
     @PutMapping(path = "/api/v1/calculations/{id}")
-    public ResponseEntity<Calculation> updateCalculation(@Valid @PathVariable Long id, @RequestBody CalculationManipulationRequest request){
+    public ResponseEntity<Calculation> updateCalculation(@Valid @PathVariable Long id, @Valid @RequestBody CalculationManipulationRequest request){
         var calculation = calculationService.update(id, request);
         return calculation != null? ResponseEntity.ok(calculation) : ResponseEntity.notFound().build();
     }
