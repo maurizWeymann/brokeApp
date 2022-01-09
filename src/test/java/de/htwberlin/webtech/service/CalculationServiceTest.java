@@ -40,7 +40,7 @@ class CalculationServiceTest implements WithAssertions {
     }
 
     @Test
-    @DisplayName("should return false if person to delete does not exist")
+    @DisplayName("should return false if calculation to delete does not exist")
     void should_return_false_if_person_to_delete_does_not_exist() {
         // given
         Long givenId = 111L;
