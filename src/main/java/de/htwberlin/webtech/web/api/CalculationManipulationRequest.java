@@ -15,6 +15,7 @@ public class CalculationManipulationRequest {
     @NotNull(message = "Please enter an amount or 0 for additional contributions")
     private BigDecimal additionalContribution;
 
+    @NotNull
     @Pattern(
             regexp = "daily|monthly|yearly",
             message = "Please choose one of the options"
